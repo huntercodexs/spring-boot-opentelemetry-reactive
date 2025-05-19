@@ -20,7 +20,6 @@
 
 	<properties>
 		<java.version>17</java.version>
-		<spring-cloud.version>2021.0.9</spring-cloud.version>
 	</properties>
 
 	<dependencies>
@@ -50,57 +49,18 @@
 
 		<!--Observability -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
+			<groupId>io.opentelemetry</groupId>
+			<artifactId>opentelemetry-bom</artifactId>
+			<version>1.31.0</version>
+			<type>pom</type>
+			<scope>import</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>io.opentelemetry</groupId>
 			<artifactId>opentelemetry-api</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>io.micrometer</groupId>
-			<artifactId>micrometer-registry-prometheus</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>com.google.protobuf</groupId>
-			<artifactId>protobuf-java</artifactId>
-			<version>3.18.1</version>
-		</dependency>
-
 	</dependencies>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>io.opentelemetry</groupId>
-				<artifactId>opentelemetry-bom</artifactId>
-				<version>1.37.0</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-sleuth-otel-dependencies</artifactId>
-				<version>1.1.2</version>
-				<scope>import</scope>
-				<type>pom</type>
-			</dependency>
-
-		</dependencies>
-	</dependencyManagement>
 
 	<build>
 		<plugins>

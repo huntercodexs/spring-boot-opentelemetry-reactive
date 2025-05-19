@@ -28,7 +28,11 @@ http://localhost:38080/api/v1/hello
 So open a new terminal to run the java agent command below
 
 ```text
-java -javaagent:otel/opentelemetry-javaagent.jar -Dotel.service.name=opentelemetry-reactive-sample -Dotel.traces.exporter=otlp -Dotel.metrics.exporter=none -Dotel.exporter.otlp.endpoint=http://localhost:4318 -Dotel.exporter.otlp.protocol=http/protobuf -jar target/*.jar
+/home/jereelton/.jdks/jdk-17.0.1/bin/java -javaagent:otel/opentelemetry-javaagent-1.32.1.jar -Dotel.service.name=opentelemetry-reactive-sample-v2.0.0 -Dotel.traces.exporter=jaeger -Dotel.metrics.exporter=none -Dotel.exporter.jaeger.endpoint=http://localhost:14250 -jar target/*.jar
 ```
 
 And now check the traces generated in the Jaeger UI tools or any other tools that you like or being using.
+
+- Java Agent Releases
+
+https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases
